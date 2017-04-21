@@ -24,6 +24,7 @@ data <- data[data$Date >= as.Date("2007-02-01") & data$Date <= as.Date("2007-02-
 # Convert to numeric
 data$Global_active_power <- as.numeric(data$Global_active_power)
 
+# Convert DateTime
 data$Posix <- as.POSIXct(strptime(paste(data$Date, data$Time), format = "%Y-%m-%d %H:%M:%S"))
 
 # Histogram with appropriate title and label
